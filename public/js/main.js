@@ -2,7 +2,7 @@
 	//Init Variables
 	var fireDB;
 	var userReactionTemplate;
-	var chatboxContainer = $('#chat-react-box');
+	var chatboxContainer = $('.chat-react-box-scroll');
 
 	var methods = {
 		init: function () {
@@ -43,8 +43,8 @@
 			}
 			var html = userReactionTemplate(data);
 			chatboxContainer.append(html);
-			// $('<div class="react-message"/>').prepend('<img src=' + reaction + '').appendTo($('#chat-react-box'));
-			$('#chat-react-box')[0].scrollTop = $('#chat-react-box')[0].scrollHeight;
+			$('.chat-react-box-scroll')[0].scrollTop = $('.chat-react-box-scroll')[0].scrollHeight;
+			// objDiv.scrollTop = objDiv.scrollHeight;
 		},
 		getGIF: function (reaction) {
 			console.log('getGIF reaction:' + ' ' + reaction);

@@ -39,17 +39,23 @@ header {
 /* CHATBOX */
 /*		   */
 
-#chat-react-box {
+#chat-react-box-wrapper {
 	display: flex;
 	flex-direction: column;
 	flex: 1 0 0;
 	padding: 10px;
+	overflow: scroll;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 
 	-webkit-box-sizing: border-box;
 	 -moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+	.chat-react-box-scroll {
+		display: block;
+		position: relative;
+		width: 100%;
+	}
 .react-message {
 
 }
@@ -73,10 +79,36 @@ header {
 			flex: 1 0 0;
 			min-width: 150px;
 			height: 50px;
-			background: rgba(0, 0, 0, 0.05);
+			/*background: rgba(0, 0, 0, 0.05);*/
+			background-size: cover;
+			/*background-image: url('../assets/reaction_images/agree.gif');*/
+			background-position: -20px;
 			border: 1px solid rgba(0, 0, 0, 0.2);
 		}
 		li.single-reaction-button:hover {
 			cursor: pointer;
-			background: rgba(0, 0, 0, 0.3);
+			background-image: url('../assets/reaction_images/agree.gif');
+			background: transparent;
 		}
+
+/*					*/
+/* REACTION MESSAGE */
+/* 					*/
+
+.react-message {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	margin: 10px 0;
+}
+	.user {
+		display: inline-block;
+		float: left;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-image: url('../assets/default_head_icon.png');
+		background-size: cover;
+	}

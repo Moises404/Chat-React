@@ -13,7 +13,9 @@
 		</header>
 
 		<!-- CHAT REACT BOX -->
-		<div id='chat-react-box'></div>
+		<div id='chat-react-box-wrapper'>
+			<div class="chat-react-box-scroll"></div>
+		</div>
 
 
 		<!-- CHAT REACT INPUT -->
@@ -21,74 +23,74 @@
 			<input type='text' id='nameInput' placeholder='Name'>
 			
 			<ul class="all-reactions">
-				<li class="single-reaction-button">agree</li>
-				<li class="single-reaction-button">applause</li>
-				<li class="single-reaction-button">awesome</li>
-				<li class="single-reaction-button">burn</li>
-				<li class="single-reaction-button">cool story bro</li>
-				<li class="single-reaction-button">deal with it</li>
-				<li class="single-reaction-button">do not want</li>
-				<li class="single-reaction-button">eye roll</li>
-				<li class="single-reaction-button">facepalm</li>
-				<li class="single-reaction-button">finger guns</li>
-				<li class="single-reaction-button">fist bump</li>
-				<li class="single-reaction-button">fml</li>
-				<li class="single-reaction-button">frown</li>
-				<li class="single-reaction-button">goodbye</li>
-				<li class="single-reaction-button">gtfo</li>
-				<li class="single-reaction-button">hair flip</li>
-				<li class="single-reaction-button">happy dance</li>
-				<li class="single-reaction-button">hello</li>
-				<li class="single-reaction-button">help</li>
-				<li class="single-reaction-button">high five</li>
-				<li class="single-reaction-button">hug</li>
-				<li class="single-reaction-button">idgaf</li>
-				<li class="single-reaction-button">idk</li>
-				<li class="single-reaction-button">kiss</li>
-				<li class="single-reaction-button">lol</li>
-				<li class="single-reaction-button">meh</li>
-				<li class="single-reaction-button">mic drop</li>
-				<li class="single-reaction-button">middle finger</li>
-				<li class="single-reaction-button">no</li>
-				<li class="single-reaction-button">oh no you didnt</li>
-				<li class="single-reaction-button">oh snap</li>
-				<li class="single-reaction-button">ok</li>
-				<li class="single-reaction-button">omg</li>
-				<li class="single-reaction-button">oops</li>
-				<li class="single-reaction-button">please</li>
-				<li class="single-reaction-button">popcorn</li>
-				<li class="single-reaction-button">seriously</li>
-				<li class="single-reaction-button">shrug</li>
-				<li class="single-reaction-button">shut up</li>
-				<li class="single-reaction-button">sigh</li>
-				<li class="single-reaction-button">slow clap</li>
-				<li class="single-reaction-button">smh</li>
-				<li class="single-reaction-button">smile</li>
-				<li class="single-reaction-button">sorry</li>
-				<li class="single-reaction-button">squee</li>
-				<li class="single-reaction-button">suck it</li>
-				<li class="single-reaction-button">table flip</li>
-				<li class="single-reaction-button">thank you</li>
-				<li class="single-reaction-button">thumbs down</li>
-				<li class="single-reaction-button">thumbs up</li>
-				<li class="single-reaction-button">ugh</li>
-				<li class="single-reaction-button">want</li>
-				<li class="single-reaction-button">what</li>
-				<li class="single-reaction-button">whatever</li>
-				<li class="single-reaction-button">win</li>
-				<li class="single-reaction-button">wink</li>
-				<li class="single-reaction-button">wow</li>
-				<li class="single-reaction-button">wtf</li>
-				<li class="single-reaction-button">yawn</li>
-				<li class="single-reaction-button">yes</li>
-				<li class="single-reaction-button">yolo</li>
+				<li class="single-reaction-button agree">agree</li>
+				<li class="single-reaction-button applause">applause</li>
+				<li class="single-reaction-button awesome">awesome</li>
+				<li class="single-reaction-button burn">burn</li>
+				<li class="single-reaction-button cool-story-bro">cool story bro</li>
+				<li class="single-reaction-button deal-with-it">deal with it</li>
+				<li class="single-reaction-button do-not-want">do not want</li>
+				<li class="single-reaction-button eye-roll">eye roll</li>
+				<li class="single-reaction-button facepalm">facepalm</li>
+				<li class="single-reaction-button finger-guns">finger guns</li>
+				<li class="single-reaction-button fist-bump">fist bump</li>
+				<li class="single-reaction-button fml">fml</li>
+				<li class="single-reaction-button forwn">frown</li>
+				<li class="single-reaction-button goodbye">goodbye</li>
+				<li class="single-reaction-button gtfo">gtfo</li>
+				<li class="single-reaction-button hair-flip">hair flip</li>
+				<li class="single-reaction-button happy-dance">happy dance</li>
+				<li class="single-reaction-button hello">hello</li>
+				<li class="single-reaction-button help">help</li>
+				<li class="single-reaction-button high-five">high five</li>
+				<li class="single-reaction-button hug">hug</li>
+				<li class="single-reaction-button idgaf">idgaf</li>
+				<li class="single-reaction-button idk">idk</li>
+				<li class="single-reaction-button kiss">kiss</li>
+				<li class="single-reaction-button lol">lol</li>
+				<li class="single-reaction-button meh">meh</li>
+				<li class="single-reaction-button mic-drop">mic drop</li>
+				<li class="single-reaction-button middle-finger">middle finger</li>
+				<li class="single-reaction-button no">no</li>
+				<li class="single-reaction-button oh-no-you-didnt">oh no you didnt</li>
+				<li class="single-reaction-button oh-snap">oh snap</li>
+				<li class="single-reaction-button ok">ok</li>
+				<li class="single-reaction-button omg">omg</li>
+				<li class="single-reaction-button oops">oops</li>
+				<li class="single-reaction-button please">please</li>
+				<li class="single-reaction-button popcorn">popcorn</li>
+				<li class="single-reaction-button seriously">seriously</li>
+				<li class="single-reaction-button shrug">shrug</li>
+				<li class="single-reaction-button shut-up">shut up</li>
+				<li class="single-reaction-button sign">sigh</li>
+				<li class="single-reaction-button slow-clap">slow clap</li>
+				<li class="single-reaction-button smh">smh</li>
+				<li class="single-reaction-button smile">smile</li>
+				<li class="single-reaction-button sorry">sorry</li>
+				<li class="single-reaction-button squee">squee</li>
+				<li class="single-reaction-button suck-it">suck it</li>
+				<li class="single-reaction-button table-flip">table flip</li>
+				<li class="single-reaction-button tahnk-you">thank you</li>
+				<li class="single-reaction-button thumbs-down">thumbs down</li>
+				<li class="single-reaction-button thumbs-up">thumbs up</li>
+				<li class="single-reaction-button ugh">ugh</li>
+				<li class="single-reaction-button want">want</li>
+				<li class="single-reaction-button what">what</li>
+				<li class="single-reaction-button whatever">whatever</li>
+				<li class="single-reaction-button win">win</li>
+				<li class="single-reaction-button wink">wink</li>
+				<li class="single-reaction-button wow">wow</li>
+				<li class="single-reaction-button wtf">wtf</li>
+				<li class="single-reaction-button yawn">yawn</li>
+				<li class="single-reaction-button yes">yes</li>
+				<li class="single-reaction-button yolo">yolo</li>
 			</ul>
 		</article>
 	</section>
 
 	<!-- HANDLEBARS TEMPLATE -->
 	<script id="user-reaction-template" type="text/x-handlebars-template">
-		<div class="react-message"/>
+		<div class="react-message">
 			<span class="user">{{user}}</span>
 			<img class="user-reaction" src="{{reaction_url}}"/>
 		</div>
