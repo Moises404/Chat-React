@@ -4,11 +4,96 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	<h1>ChatReact</h1>
-	<div id='messagesDiv'></div>
-	<input type='text' id='nameInput' placeholder='Name'>
-	<input type='text' id='messageInput' placeholder='Message'>
-	
+	<section class="app">
+		<header>
+			<h1>ChatReact</h1>
+			<span class="github-link">
+				<a href="https://github.com/Moises404/chat-react"></a>
+			</span>
+		</header>
+
+		<!-- CHAT REACT BOX -->
+		<div id='chat-react-box'></div>
+
+
+		<!-- CHAT REACT INPUT -->
+		<article class="reactions-wrapper">
+			<input type='text' id='nameInput' placeholder='Name'>
+			
+			<ul class="all-reactions">
+				<li class="single-reaction-button">agree</li>
+				<li class="single-reaction-button">applause</li>
+				<li class="single-reaction-button">awesome</li>
+				<li class="single-reaction-button">burn</li>
+				<li class="single-reaction-button">cool story bro</li>
+				<li class="single-reaction-button">deal with it</li>
+				<li class="single-reaction-button">do not want</li>
+				<li class="single-reaction-button">eye roll</li>
+				<li class="single-reaction-button">facepalm</li>
+				<li class="single-reaction-button">finger guns</li>
+				<li class="single-reaction-button">fist bump</li>
+				<li class="single-reaction-button">fml</li>
+				<li class="single-reaction-button">frown</li>
+				<li class="single-reaction-button">goodbye</li>
+				<li class="single-reaction-button">gtfo</li>
+				<li class="single-reaction-button">hair flip</li>
+				<li class="single-reaction-button">happy dance</li>
+				<li class="single-reaction-button">hello</li>
+				<li class="single-reaction-button">help</li>
+				<li class="single-reaction-button">high five</li>
+				<li class="single-reaction-button">hug</li>
+				<li class="single-reaction-button">idgaf</li>
+				<li class="single-reaction-button">idk</li>
+				<li class="single-reaction-button">kiss</li>
+				<li class="single-reaction-button">lol</li>
+				<li class="single-reaction-button">meh</li>
+				<li class="single-reaction-button">mic drop</li>
+				<li class="single-reaction-button">middle finger</li>
+				<li class="single-reaction-button">no</li>
+				<li class="single-reaction-button">oh no you didnt</li>
+				<li class="single-reaction-button">oh snap</li>
+				<li class="single-reaction-button">ok</li>
+				<li class="single-reaction-button">omg</li>
+				<li class="single-reaction-button">oops</li>
+				<li class="single-reaction-button">please</li>
+				<li class="single-reaction-button">popcorn</li>
+				<li class="single-reaction-button">seriously</li>
+				<li class="single-reaction-button">shrug</li>
+				<li class="single-reaction-button">shut up</li>
+				<li class="single-reaction-button">sigh</li>
+				<li class="single-reaction-button">slow clap</li>
+				<li class="single-reaction-button">smh</li>
+				<li class="single-reaction-button">smile</li>
+				<li class="single-reaction-button">sorry</li>
+				<li class="single-reaction-button">squee</li>
+				<li class="single-reaction-button">suck it</li>
+				<li class="single-reaction-button">table flip</li>
+				<li class="single-reaction-button">thank you</li>
+				<li class="single-reaction-button">thumbs down</li>
+				<li class="single-reaction-button">thumbs up</li>
+				<li class="single-reaction-button">ugh</li>
+				<li class="single-reaction-button">want</li>
+				<li class="single-reaction-button">what</li>
+				<li class="single-reaction-button">whatever</li>
+				<li class="single-reaction-button">win</li>
+				<li class="single-reaction-button">wink</li>
+				<li class="single-reaction-button">wow</li>
+				<li class="single-reaction-button">wtf</li>
+				<li class="single-reaction-button">yawn</li>
+				<li class="single-reaction-button">yes</li>
+				<li class="single-reaction-button">yolo</li>
+			</ul>
+		</article>
+	</section>
+
+	<!-- HANDLEBARS TEMPLATE -->
+	<script id="user-reaction-template" type="text/x-handlebars-template">
+		<div class="react-message"/>
+			<span class="user">{{user}}</span>
+			<img class="user-reaction" src="{{reaction_url}}"/>
+		</div>
+	</script>
+
 	<!--			-->
 	<!-- JAVASCRIPT -->
 	<!--			-->
@@ -16,6 +101,11 @@
 	<!-- FIREBASE JS CLIENT -->
 	<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
 	<script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/libs/handlebars.js"></script>
+	<script type="text/javascript" src="js/reactionsArray.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		window.ChatReact.init();
+	</script>
 </body>
 </html>

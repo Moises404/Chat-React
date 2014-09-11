@@ -1,26 +1,75 @@
-// Reference to the root of the DB
-var myDataRef = new Firebase('https://chat-react-db.firebaseio.com/');
+(function () {
+	//Init Variables
+	var fireDB;
+	var userReactionTemplate;
+	var chatboxContainer = $('#chat-react-box');
 
-// input keypress send the input value to the DB
-$('#messageInput').keypress(function (e) {
-	if (e.keyCode == 13) {
-		var name = $('#nameInput').val();
-		var text = $('#messageInput').val();
-		myDataRef.push({name: name, text: text});
-		$('#messageInput').val('');
+	var methods = {
+		init: function () {
+			console.log('Chat React Init');
+			console.log(reactionsArray);
+			
+			// init handlebars template
+			var source = $('#user-reaction-template').html();
+			userReactionTemplate = Handlebars.compile(source);
+
+			// init Fire Database and React Input Button
+			methods.initFireDB();
+			methods.initReactButton();
+		},
+		initFireDB: function () {
+			// Reference to the root of the DB
+			fireDB = new Firebase('https://chat-react-db.firebaseio.com/');
+
+			// callback that notifies when the message has arrived to the DB
+			fireDB.on('child_added', function(snapshot) {
+				// get the data from child_added
+				var message = snapshot.val();
+				methods.displayChatMessage(message.name, message.reaction_url);
+			});	
+		},
+		initReactButton: function () {
+			// init keypress for reaction
+			$('.single-reaction-button').on('click', function (e) {
+				e.preventDefault();
+				var text = $(this).html();
+				methods.getGIF(text);
+			});
+		},
+		displayChatMessage: function (name, reaction_url) {
+			var data = {
+				user: name,
+				reaction_url: reaction_url
+			}
+			var html = userReactionTemplate(data);
+			chatboxContainer.append(html);
+			// $('<div class="react-message"/>').prepend('<img src=' + reaction + '').appendTo($('#chat-react-box'));
+			$('#chat-react-box')[0].scrollTop = $('#chat-react-box')[0].scrollHeight;
+		},
+		getGIF: function (reaction) {
+			console.log('getGIF reaction:' + ' ' + reaction);
+			console.log('getGIF function fired');
+
+			var params = {
+				url: 'http://api.giphy.com/v1/gifs/search?q=' + reaction + '&api_key=dc6zaTOxFJmzC&limit=1&offset=0&limit=5',
+				dataType: 'json',
+				success: function (GIFdata) {
+					console.log(GIFdata);
+					methods.chooseRandomReactGIF(GIFdata);
+				}
+			}
+			$.ajax(params);
+		},
+		chooseRandomReactGIF: function (GIFdata) {
+			var randNumber = Math.floor(Math.random() * 5);
+			var GIF_URL = GIFdata.data[randNumber].images.original.url;
+
+			var name = $('#nameInput').val();
+			var reaction = GIF_URL;
+			fireDB.push({name: name, reaction_url: reaction});
+			$('#messageInput').val('');
+			
+		}
 	}
-});
-
-// callback that notifies when the message has arrived to the DB
-myDataRef.on('child_added', function(snapshot) {
-	// get the data from child_added
-	var message = snapshot.val();
-	displayChatMessage(message.name, message.text);
-});
-
-function displayChatMessage (name, text) {
-	$('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
-	$('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
-}
-
-
+	window.ChatReact = methods;
+})();

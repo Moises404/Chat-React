@@ -3,3 +3,80 @@ html, body {
 	padding: 0;
 	font-family: 'Helvetica', 'Arial', sans-serif;
 }
+
+/*     */
+/* APP */
+/*     */
+
+.app {
+	display: flex;
+	flex: 1 0 0;
+	flex-direction: column;
+	height: 100%;
+}
+
+
+
+/*		  */
+/* HEADER */
+/*		  */
+
+header {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 50px;
+}
+
+	h1 {
+		margin: 10px;
+		font-weight: lighter;
+	}
+
+
+
+/* 		   */
+/* CHATBOX */
+/*		   */
+
+#chat-react-box {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 0;
+	padding: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+
+	-webkit-box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.react-message {
+
+}
+
+.reactions-wrapper {
+	overflow: scroll;
+	border: 1px solid black;
+}
+	ul.all-reactions {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		/*justify-content: space-around;*/
+		flex-flow: row wrap;
+		height: 300px;
+	}
+		li.single-reaction-button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex: 1 0 0;
+			min-width: 150px;
+			height: 50px;
+			background: rgba(0, 0, 0, 0.05);
+			border: 1px solid rgba(0, 0, 0, 0.2);
+		}
+		li.single-reaction-button:hover {
+			cursor: pointer;
+			background: rgba(0, 0, 0, 0.3);
+		}
