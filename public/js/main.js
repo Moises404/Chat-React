@@ -43,6 +43,7 @@
 			}
 			var html = userReactionTemplate(data);
 			chatboxContainer.append(html);
+			//scrollTO
 			$('.chat-react-box-scroll')[0].scrollTop = $('.chat-react-box-scroll')[0].scrollHeight;
 			// objDiv.scrollTop = objDiv.scrollHeight;
 		},
@@ -73,3 +74,4 @@
 	}
 	window.ChatReact = methods;
 })();
+
