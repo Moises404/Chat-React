@@ -2,66 +2,25 @@ html, body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Helvetica', 'Arial', sans-serif;
+	background: black;
 }
 
-/*     */
-/* APP */
-/*     */
+/*					*/
+/* CHATBOX REACTION */
+/*					*/
 
-.app {
-	display: flex;
-	flex: 1 0 0;
-	flex-direction: column;
-	height: 100%;
-}
-
-
-
-/*		  */
-/* HEADER */
-/*		  */
-
-header {
-	display: flex;
-	justify-content: center;
+.chatbox-container img {
 	width: 100%;
-	height: 50px;
 }
 
-	h1 {
-		margin: 10px;
-		font-weight: lighter;
-	}
-
-
-
-/* 		   */
-/* CHATBOX */
-/*		   */
-
-#chat-react-box-wrapper {
-	display: flex;
-	flex-direction: column;
-	flex: 1 0 0;
-	padding: 10px;
-	overflow: scroll;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-
-	-webkit-box-sizing: border-box;
-	 -moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-	.chat-react-box-scroll {
-		display: block;
-		position: relative;
-		width: 100%;
-	}
-.react-message {
-
-}
+/*					  */
+/* REACTIONS KEYBOARD */
+/*					  */
 
 .reactions-wrapper {
+	position: fixed;
 	overflow: scroll;
+	bottom: 0;
 	border: 1px solid black;
 }
 	ul.all-reactions {
@@ -70,7 +29,7 @@ header {
 		display: flex;
 		/*justify-content: space-around;*/
 		flex-flow: row wrap;
-		height: 300px;
+		height: 100px;
 	}
 		li.single-reaction-button {
 			display: flex;
@@ -79,7 +38,9 @@ header {
 			flex: 1 0 0;
 			min-width: 150px;
 			height: 50px;
-			/*background: rgba(0, 0, 0, 0.05);*/
+			color: white;
+			/*background-color: white;*/
+			background: rgba(255, 255, 255, 0.2);
 			background-size: cover;
 			/*background-image: url('../assets/reaction_images/agree.gif');*/
 			background-position: -20px;
@@ -88,27 +49,6 @@ header {
 		li.single-reaction-button:hover {
 			cursor: pointer;
 			background-image: url('../assets/reaction_images/agree.gif');
-			background: transparent;
+			/*background: transparent;*/
+			background: rgba(255, 255, 255, 0.1);
 		}
-
-/*					*/
-/* REACTION MESSAGE */
-/* 					*/
-
-.react-message {
-	display: block;
-	position: relative;
-	width: 100%;
-	height: 300px;
-	overflow: hidden;
-	margin: 10px 0;
-}
-	.user {
-		display: inline-block;
-		float: left;
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		background-image: url('../assets/default_head_icon.png');
-		background-size: cover;
-	}

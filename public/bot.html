@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Chat React - Robot</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<!-- <h1>Chat React - Robot</h1> -->
+
+	<!-- CHATBOX CONTAINER -->
+	<section class="chatbox-container">
+	</section>
+
+	<!-- HANDLEBARS TEMPLATE -->
+	<script id="robot-reaction-template" type="text/x-handlebars-teamplate">
+		<img id='robot-reaction' src='{{reaction_url}}'/>
+	</script>
+
+	<!-- FIREBASE -->
+	<script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+
+	<!-- JAVASCRIPT -->
+	<script type="text/javascript" src="js/libs/handlebars.js"></script>
+	<script type="text/javascript" src="js/libs/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/libs/underscore-min.js"></script>
+	<script type="text/javascript" src="js/reactionsArray.js"></script>
+	<script type="text/javascript" src="js/robot.js"></script>
+	<script type="text/javascript">
+		window.ChatReact.init();
+	</script>
+</body>
+</html>
